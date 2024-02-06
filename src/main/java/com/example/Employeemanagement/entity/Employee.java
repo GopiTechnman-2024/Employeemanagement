@@ -18,30 +18,67 @@ public class Employee {
     @Setter
     private String name;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
     @Getter
     @Setter
     private double salary;
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getSalar()
+    {
+        return salary;
+    }
 
     @Getter
     @Setter
     private String designation;
 
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public String getDesignation()
+    {
+        return designation;
+    }
     @Getter
     @Setter
     @ManyToOne
     @JoinColumn(name="department_id")
-    Department department;
+    private Department department;
 
-/*
-   @Getter
-    @Setter
-    private String department;
-*/
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Department getDepartment()
+    {
+        return department;
+    }
 
     @Getter
     @Setter
-    private String Address;
+    private String address;
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
 
     @Getter
     @Setter
@@ -50,7 +87,15 @@ public class Employee {
     @Column(name = "project_id")
     private List<Long> projects;
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setProjects(List<Long> projects) {
+        this.projects = projects;
+    }
+
+    public List<Long> getProjects()
+    {
+        return projects;
+    }
+    public long getEmployeeId() {
+        return employeeId;
     }
 }

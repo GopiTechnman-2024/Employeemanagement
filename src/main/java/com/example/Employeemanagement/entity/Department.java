@@ -15,4 +15,14 @@ public class Department {
     @Getter
     @Setter
     private String departmentName;
+
+    public void setDepartmentName(String name)
+    {
+        this.departmentName=name;
+    }
+
+    public String getDepartmentName()
+    {
+        return departmentName;
+    }
 }

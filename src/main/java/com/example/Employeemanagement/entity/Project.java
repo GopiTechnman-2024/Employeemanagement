@@ -16,25 +16,55 @@ public class Project {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int projectId;
 
+
+
     @Getter
     @Setter
     private String projectName;
 
     //team_lead and team is remaining and status enum is also remaining
 
+    public void setProjectName(String name)
+    {
+        this.projectName=name;
+    }
+
+    public String getProjectName()
+    {
+        return projectName;
+    }
+
     @Getter
     @Setter
-    @Temporal(TemporalType.DATE) // Specifies the type of temporal data (DATE, TIME, TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "start_date")
     private Date startDate;
 
+    public void setStartDate(Date date)
+    {
+        this.startDate=date;
+    }
+
+    public Date getStartDate()
+    {
+        return startDate;
+    }
+
     @Getter
     @Setter
-    @Temporal(TemporalType.DATE) // Specifies the type of temporal data (DATE, TIME, TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "end_date")
     private Date endDate;
 
+    public void setEndDate(Date date)
+    {
+        this.endDate=date;
+    }
 
+    public Date getEndDate()
+    {
+        return endDate;
+    }
 
 @Getter
 @Setter
@@ -43,17 +73,7 @@ public class Project {
     private List<Employee> team;
 
 
-
+    public List<Employee> getTeam() {
+        return team;
+    }
 }
-/*
-id (long & unique)
-name
-team (List<Emp>)
-Team_lead
-Status enum
-NEW - By default the Project status will be new till its start_date is after today.
-ON-GOING - If the today is between start and end date
-ENDED - if the today is after end-date
-Start_date
-End_dat
- */
